@@ -9,7 +9,6 @@ contract Election { //the whole election process is controlled by admin
     struct Candidate {
         uint candidateID;
         string candidateName;
-        string candidateIdea;
         uint voteReceived;
     }
     
@@ -23,9 +22,9 @@ contract Election { //the whole election process is controlled by admin
     event voteValidation(bool); //tell if the vote is valid
     event electionWinner(uint,string,uint); //emit winners' info
     
-    function addCandidate(string memory _name, string memory _idea) public { //candidate is added by admin
+    function addCandidate(string memory _name) public { //candidate is added by admin
         candidatesCount++;
-        candidates[candidatesCount] = Candidate(candidatesCount, _name, _idea, 0);
+        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
     
     function vote(uint _candidateID) public {
