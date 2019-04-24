@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./views/Home.js";
 import Candidates from "./views/Candidates.js";
 import Voting from "./views/Voting.js";
+import Admin from "./views/Admin.js";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
@@ -36,6 +37,7 @@ class App extends Component {
                     <Route exact path="/" component={Home} />
                     <Route path="/candidates" component={Candidates} />
                     <Route path="/voting" component={Voting} />
+                    <Route path="/admin" component={Admin} />
                 </div>
             </Router>
         );

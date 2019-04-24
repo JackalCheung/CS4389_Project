@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import Election from "../contracts/Election.json";
 import ElectionOracle from "../contracts/ElectionOracle.json";
 import getWeb3 from "../utils/getWeb3";
-
 import "../App.css";
+
+var ODCount = 0;
+
 class Voting extends Component {
-    state = { storageValue: 0, web3: null, account: null, contract: null , candidates: [], fromBlock: 0, oracleContract:null };
+    state = { web3: null, account: null, contract: null , candidates: [], fromBlock: 0, oracleContract:null };
     componentDidMount = async () => {
         try {
             // Self = this;
@@ -73,24 +75,27 @@ class Voting extends Component {
     vote = async (event) =>{
         event.preventDefault();
         var choice = 1;
-        var AppSelf = this;
         const { account, contract } = this.state;
         contract.methods.vote(choice).send({ from: account, gas: 500000 }, (err,trans) => {
             console.log("Voted for Unnat");
             console.log(trans);
-            // AppSelf.getCandidates();
         });
     }
     listToOracle = async () =>{
         const b = this.state.fromBlock;
+        var AppSelf = this;
         this.state.contract.events.VoteValidation({
             fromBlock: b, toBlock: 'latest'
         })
-            .on('data', function (event) {
-                // event format is ToOracle(address me, string data)
-                console.log(event.status);
-            })
-            .on('error', console.error);
+        .on('data', function (event) {
+            // event format is ToOracle(address me, string data)
+            if (event.blockNumber <= ODCount) return;
+            ODCount = event.blockNumber;
+            if (event.status){
+                AppSelf.getCandidates();
+            }
+        })
+        .on('error', console.error);
     };
         
     runExample = async () => {
