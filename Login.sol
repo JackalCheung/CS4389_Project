@@ -2,10 +2,10 @@ pragma solidity ^0.5.2;
 
 contract Login {
     
-    address[] users;
+    address[] users; //store users' data
     struct userInfo {
         uint userID;
-        string userName;
+        string SID;
         string userRole;
     }
     
@@ -23,7 +23,7 @@ contract Login {
                 u = userList[_user];
                 emit returnInfo(address(this)
                 ,u.userID
-                ,u.userName
+                ,u.SID
                 ,u.userRole);
                 break;
             }
@@ -40,7 +40,7 @@ contract Login {
     function getUserInfo(address _user) public {
         emit returnInfo(address(this)
         ,userList[_user].userID
-        ,userList[_user].userName
+        ,userList[_user].SID
         ,userList[_user].userRole);
     }
 }
