@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "../App.css";
 
@@ -14,14 +14,10 @@ class Home extends Component {
         }
     };
 
-    runExample = async () => {
-        
-    };
-
     render() {
         return (
             <div>
-
+                
             </div>
         );
     }

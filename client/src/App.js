@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./views/Home.js";
 import Candidates from "./views/Candidates.js";
 import Voting from "./views/Voting.js";
-
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 class App extends Component {
@@ -16,13 +17,9 @@ class App extends Component {
         }
     };
 
-    runExample = async () => {
-        
-    };
-
     render() {
         return (
-            <Router>
+            <Router forceRefresh={true}>
                 <div>
                     <ul>
                         <li>

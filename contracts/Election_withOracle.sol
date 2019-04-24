@@ -12,9 +12,9 @@ contract Election { //the whole election process is controlled by admin
         uint voteReceived;
     }
     
-    mapping(address => bool) voters; //avoid duplicated vote from users
+    mapping(address => bool) public voters; //avoid duplicated vote from users
     
-    mapping(uint=>Candidate) candidates; //store candidates info
+    mapping(uint=>Candidate) public candidates; //store candidates info
     
     uint public candidatesCount; //number of candidates in the election
     
