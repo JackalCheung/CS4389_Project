@@ -10,8 +10,7 @@ contract Login {
     
     mapping(address=>userInfo) userList;
     
-    event returnInfo(address,uint,string);
-    event userRole(string);
+    event returnInfo(address userAddress,uint userID,string userName);
     
     function login(address _user, string memory _userName) public {
         uint i;
