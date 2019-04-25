@@ -5,16 +5,15 @@ contract Login {
     address[] users; //store users' data
     struct userInfo {
         uint userID;
-        string SID;
-        string userRole;
+        string userName;
     }
     
     mapping(address=>userInfo) userList;
     
-    event returnInfo(address,uint,string,string);
+    event returnInfo(address,uint,string);
     event userRole(string);
     
-    function login(address _user, string memory _SID, string memory _role) public {
+    function login(address _user, string memory _userName) public {
         uint i;
         userInfo memory u;
         for(i=0;i<users.length;i++) {
@@ -22,27 +21,24 @@ contract Login {
                 u = userList[_user];
                 emit returnInfo(address(this)
                 ,u.userID
-                ,u.SID
-                ,u.userRole);
+                ,u.userName);
                 break;
             }
         }
         
         if(i == users.length) {
-            u = userInfo(i, _SID, _role);
+            u = userInfo(i, _userName);
             users.push(_user);
             userList[_user] = u;
             emit returnInfo(address(this)
                 ,u.userID
-                ,u.SID
-                ,u.userRole);
+                ,u.userName);
         }
     }
     
     function getUserInfo(address _user) public {
         emit returnInfo(address(this)
         ,userList[_user].userID
-        ,userList[_user].SID
-        ,userList[_user].userRole);
+        ,userList[_user].userName);
     }
 }
