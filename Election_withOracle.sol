@@ -93,7 +93,7 @@ contract Election { //the whole election process is controlled by admin
         }
     }
     
-    function callbackVoteRecord(bool validity, string memory _candidateName) public {
-        emit voteValidation(address(msg.sender),validity,_candidateName);
+    function callbackVoteRecord(string memory _candidateName) public {
+        emit voteValidation(address(msg.sender),true,_candidateName);
     }
 }
