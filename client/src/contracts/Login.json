@@ -16,8 +16,7 @@
         }
       ],
       "name": "Registered",
-      "type": "event",
-      "signature": "0xb3eccf73f39b1c07947c780b2b39df2a1bb058b4037b0a42d0881ca1a028a132"
+      "type": "event"
     },
     {
       "anonymous": false,
@@ -29,8 +28,7 @@
         }
       ],
       "name": "Role",
-      "type": "event",
-      "signature": "0xa76e6e0287189150f7a94fd68d8a69940dad56188e6281e63ad26713c7206b5c"
+      "type": "event"
     },
     {
       "constant": false,
@@ -44,8 +42,7 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0x35a6861a"
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.5.2+commit.1df8f40c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"user\",\"type\":\"address\"}],\"name\":\"login\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"\",\"type\":\"string\"}],\"name\":\"Registered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"\",\"type\":\"string\"}],\"name\":\"Role\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/Unnat/Code/CS4389_Project/contracts/Login.sol\":\"Login\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/Unnat/Code/CS4389_Project/contracts/Login.sol\":{\"keccak256\":\"0x18fc4c284ac2370b0274bfcd777692d75d59435f5cd702a61d16af02929f488a\",\"urls\":[\"bzzr://9bd56fa636e3bdc12fc4fdd022d9bfd68c4063cbfb2fa9e8e85e7be719b8f1c1\"]}},\"version\":1}",
@@ -59,14 +56,14 @@
     "absolutePath": "/Users/Unnat/Code/CS4389_Project/contracts/Login.sol",
     "exportedSymbols": {
       "Login": [
-        359
+        400
       ]
     },
-    "id": 360,
+    "id": 401,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 331,
+        "id": 372,
         "literals": [
           "solidity",
           "^",
@@ -82,23 +79,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 359,
+        "id": 400,
         "linearizedBaseContracts": [
-          359
+          400
         ],
         "name": "Login",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Login.userInfo",
-            "id": 338,
+            "id": 379,
             "members": [
               {
                 "constant": false,
-                "id": 333,
+                "id": 374,
                 "name": "userID",
                 "nodeType": "VariableDeclaration",
-                "scope": 338,
+                "scope": 379,
                 "src": "72:11:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -107,7 +104,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 332,
+                  "id": 373,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "72:4:2",
@@ -121,10 +118,10 @@
               },
               {
                 "constant": false,
-                "id": 335,
+                "id": 376,
                 "name": "userName",
                 "nodeType": "VariableDeclaration",
-                "scope": 338,
+                "scope": 379,
                 "src": "93:15:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -133,7 +130,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 334,
+                  "id": 375,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "93:6:2",
@@ -147,10 +144,10 @@
               },
               {
                 "constant": false,
-                "id": 337,
+                "id": 378,
                 "name": "userRole",
                 "nodeType": "VariableDeclaration",
-                "scope": 338,
+                "scope": 379,
                 "src": "118:15:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -159,7 +156,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 336,
+                  "id": 377,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "118:6:2",
@@ -174,27 +171,27 @@
             ],
             "name": "userInfo",
             "nodeType": "StructDefinition",
-            "scope": 359,
+            "scope": 400,
             "src": "46:94:2",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 342,
+            "id": 383,
             "name": "userList",
             "nodeType": "VariableDeclaration",
-            "scope": 359,
+            "scope": 400,
             "src": "150:35:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_userInfo_$338_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_userInfo_$379_storage_$",
               "typeString": "mapping(address => struct Login.userInfo)"
             },
             "typeName": {
-              "id": 341,
+              "id": 382,
               "keyType": {
-                "id": 339,
+                "id": 380,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "158:7:2",
@@ -206,18 +203,18 @@
               "nodeType": "Mapping",
               "src": "150:26:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_userInfo_$338_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_userInfo_$379_storage_$",
                 "typeString": "mapping(address => struct Login.userInfo)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 340,
+                "id": 381,
                 "name": "userInfo",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 338,
+                "referencedDeclaration": 379,
                 "src": "167:8:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_userInfo_$338_storage_ptr",
+                  "typeIdentifier": "t_struct$_userInfo_$379_storage_ptr",
                   "typeString": "struct Login.userInfo"
                 }
               }
@@ -228,20 +225,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 348,
+            "id": 389,
             "name": "Registered",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 347,
+              "id": 388,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 344,
+                  "id": 385,
                   "indexed": false,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 348,
+                  "scope": 389,
                   "src": "213:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -250,7 +247,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 343,
+                    "id": 384,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "213:7:2",
@@ -265,11 +262,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 346,
+                  "id": 387,
                   "indexed": false,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 348,
+                  "scope": 389,
                   "src": "221:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -278,7 +275,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 345,
+                    "id": 386,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "221:6:2",
@@ -298,20 +295,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 352,
+            "id": 393,
             "name": "Role",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 351,
+              "id": 392,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 350,
+                  "id": 391,
                   "indexed": false,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 352,
+                  "scope": 393,
                   "src": "245:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -320,7 +317,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 349,
+                    "id": 390,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "245:6:2",
@@ -339,28 +336,28 @@
           },
           {
             "body": {
-              "id": 357,
+              "id": 398,
               "nodeType": "Block",
               "src": "299:16:2",
               "statements": []
             },
             "documentation": null,
-            "id": 358,
+            "id": 399,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "login",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 355,
+              "id": 396,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 354,
+                  "id": 395,
                   "name": "user",
                   "nodeType": "VariableDeclaration",
-                  "scope": 358,
+                  "scope": 399,
                   "src": "278:12:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -369,7 +366,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 353,
+                    "id": 394,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "278:7:2",
@@ -386,19 +383,19 @@
               "src": "277:14:2"
             },
             "returnParameters": {
-              "id": 356,
+              "id": 397,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "299:0:2"
             },
-            "scope": 359,
+            "scope": 400,
             "src": "263:52:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 360,
+        "scope": 401,
         "src": "25:292:2"
       }
     ],
@@ -408,14 +405,14 @@
     "absolutePath": "/Users/Unnat/Code/CS4389_Project/contracts/Login.sol",
     "exportedSymbols": {
       "Login": [
-        359
+        400
       ]
     },
-    "id": 360,
+    "id": 401,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 331,
+        "id": 372,
         "literals": [
           "solidity",
           "^",
@@ -431,23 +428,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 359,
+        "id": 400,
         "linearizedBaseContracts": [
-          359
+          400
         ],
         "name": "Login",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Login.userInfo",
-            "id": 338,
+            "id": 379,
             "members": [
               {
                 "constant": false,
-                "id": 333,
+                "id": 374,
                 "name": "userID",
                 "nodeType": "VariableDeclaration",
-                "scope": 338,
+                "scope": 379,
                 "src": "72:11:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -456,7 +453,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 332,
+                  "id": 373,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "72:4:2",
@@ -470,10 +467,10 @@
               },
               {
                 "constant": false,
-                "id": 335,
+                "id": 376,
                 "name": "userName",
                 "nodeType": "VariableDeclaration",
-                "scope": 338,
+                "scope": 379,
                 "src": "93:15:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -482,7 +479,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 334,
+                  "id": 375,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "93:6:2",
@@ -496,10 +493,10 @@
               },
               {
                 "constant": false,
-                "id": 337,
+                "id": 378,
                 "name": "userRole",
                 "nodeType": "VariableDeclaration",
-                "scope": 338,
+                "scope": 379,
                 "src": "118:15:2",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -508,7 +505,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 336,
+                  "id": 377,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "118:6:2",
@@ -523,27 +520,27 @@
             ],
             "name": "userInfo",
             "nodeType": "StructDefinition",
-            "scope": 359,
+            "scope": 400,
             "src": "46:94:2",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 342,
+            "id": 383,
             "name": "userList",
             "nodeType": "VariableDeclaration",
-            "scope": 359,
+            "scope": 400,
             "src": "150:35:2",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_userInfo_$338_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_userInfo_$379_storage_$",
               "typeString": "mapping(address => struct Login.userInfo)"
             },
             "typeName": {
-              "id": 341,
+              "id": 382,
               "keyType": {
-                "id": 339,
+                "id": 380,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "158:7:2",
@@ -555,18 +552,18 @@
               "nodeType": "Mapping",
               "src": "150:26:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_userInfo_$338_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_userInfo_$379_storage_$",
                 "typeString": "mapping(address => struct Login.userInfo)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 340,
+                "id": 381,
                 "name": "userInfo",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 338,
+                "referencedDeclaration": 379,
                 "src": "167:8:2",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_userInfo_$338_storage_ptr",
+                  "typeIdentifier": "t_struct$_userInfo_$379_storage_ptr",
                   "typeString": "struct Login.userInfo"
                 }
               }
@@ -577,20 +574,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 348,
+            "id": 389,
             "name": "Registered",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 347,
+              "id": 388,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 344,
+                  "id": 385,
                   "indexed": false,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 348,
+                  "scope": 389,
                   "src": "213:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -599,7 +596,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 343,
+                    "id": 384,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "213:7:2",
@@ -614,11 +611,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 346,
+                  "id": 387,
                   "indexed": false,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 348,
+                  "scope": 389,
                   "src": "221:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -627,7 +624,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 345,
+                    "id": 386,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "221:6:2",
@@ -647,20 +644,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 352,
+            "id": 393,
             "name": "Role",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 351,
+              "id": 392,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 350,
+                  "id": 391,
                   "indexed": false,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 352,
+                  "scope": 393,
                   "src": "245:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -669,7 +666,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 349,
+                    "id": 390,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "245:6:2",
@@ -688,28 +685,28 @@
           },
           {
             "body": {
-              "id": 357,
+              "id": 398,
               "nodeType": "Block",
               "src": "299:16:2",
               "statements": []
             },
             "documentation": null,
-            "id": 358,
+            "id": 399,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "login",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 355,
+              "id": 396,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 354,
+                  "id": 395,
                   "name": "user",
                   "nodeType": "VariableDeclaration",
-                  "scope": 358,
+                  "scope": 399,
                   "src": "278:12:2",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -718,7 +715,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 353,
+                    "id": 394,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "278:7:2",
@@ -735,19 +732,19 @@
               "src": "277:14:2"
             },
             "returnParameters": {
-              "id": 356,
+              "id": 397,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "299:0:2"
             },
-            "scope": 359,
+            "scope": 400,
             "src": "263:52:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 360,
+        "scope": 401,
         "src": "25:292:2"
       }
     ],
@@ -761,12 +758,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x85Dc693475745a92B8f842e11542339c4483f11A",
-      "transactionHash": "0x66f322b49ebacceb2ecc45290e1d66afdeec4e9d340d8c8c011a3b644736076a"
+      "address": "0xBAA6D4B2F2BC6446Ee5931515f71ba041eF58028",
+      "transactionHash": "0x20edda2540948c7819758164f067428a61c2382f128c32875b4065fd08b30506"
     }
   },
   "schemaVersion": "3.0.6",
-  "updatedAt": "2019-04-24T12:57:57.974Z",
+  "updatedAt": "2019-04-25T13:49:24.795Z",
   "devdoc": {
     "methods": {}
   },

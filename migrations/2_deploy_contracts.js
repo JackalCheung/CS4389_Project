@@ -5,7 +5,7 @@ var Login = artifacts.require("./Login.sol");
 
 module.exports = function(deployer) {
     var o;
-    deployer.deploy(Login);
+    // deployer.deploy(Login);
     deployer.deploy(ElectionOracle);
     deployer.deploy(Election);
     deployer.then(function() {

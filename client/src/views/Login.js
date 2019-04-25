@@ -6,7 +6,7 @@ import getWeb3 from "../utils/getWeb3";
 
 import "../App.css";
 
-class Admin extends Component {
+class Login extends Component {
     state = { web3: null, account: null, contract: null , candidates: [], fromBlock: 0, oracleContract:null , candidateName: null};
     componentDidMount = async () => {
         try {
@@ -26,7 +26,6 @@ class Admin extends Component {
             );
             oracleInstance.options.address = '0x2eE4fe70263ed3989719E1d770be135b92317f6E';
             this.setState({ web3, account: accounts[0], contract: instance, oracleContract: oracleInstance });
-            instance.getPastEvents("voteValidation", {fromBlock: 0, toBlock: 'latest'} , (err, res) => {console.log(res)});
         } catch (error) {
             // Catch any errors for any of the above operations.
             alert(
@@ -36,37 +35,22 @@ class Admin extends Component {
         }
     };
 
-    addCandidates = async () => {
-        const { account, contract } = this.state;
-        let name = this.state.candidateName;
-        contract.methods.addCandidate(name).send({ from: account, gas: 500000 }, (err,trans) => {
-            console.log("Added "+ name);
-        });
-        // console.log(this.state.contract.candidates);
-    }
-    start = () => {
-        const { account, contract } = this.state;
-        contract.methods.startElection().send({ from: account, gas: 500000 }, (err,trans) => {
-            console.log("Started Election ");
-        });
-    }
-    end = () => {
-        const { account, contract } = this.state;
-        contract.methods.endElection().send({ from: account, gas: 500000 }, (err,trans) => {
-            console.log("Ended Election ");
-            contract.methods.results().send({ from: account, gas: 500000 }, (err,trans) => {
-                console.log("Found Result");
-            });
-        });
-    }
+    // addCandidates = async () => {
+    //     const { account, contract } = this.state;
+    //     let name = this.state.candidateName;
+    //     contract.methods.addCandidate(name).send({ from: account, gas: 500000 }, (err,trans) => {
+    //         console.log("Added "+ name);
+    //     });
+    //     // console.log(this.state.contract.candidates);
+    // }
 
     render() {
         return (
             <div>
-                <p>Admin</p>
+                <p>Login</p>
             </div>
         );
     }
 }
 
-export default Admin;
+export default Login;
