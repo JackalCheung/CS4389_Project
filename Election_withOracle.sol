@@ -20,6 +20,7 @@ contract Election { //the whole election process is controlled by admin
     event periodControl(address me,bool status); //control the election period
     event voteValidation(address me,bool validity, string _candidateName); //tell if the vote is valid
     event electionWinner(address me,uint winnerID, uint voteReceived); //emit winners' info
+    event candidateData(uint candidateID, uint voteReceived); //emit candidate's data
     
     function addCandidate() public { //candidate is added by admin
         candidatesCount++;
@@ -41,7 +42,7 @@ contract Election { //the whole election process is controlled by admin
         ElectionOracle(oracle_address).voteReceivedValidation(address(msg.sender),false,_candidateID);
     }
     
-    function result() public {
+    function finalResult() public {
         Candidate memory winner = candidates[0];
         //find out the election winner
         for(uint i=0;i<candidatesCount;i++) {
@@ -61,6 +62,11 @@ contract Election { //the whole election process is controlled by admin
             ,winnerList[i].voteReceived);
         }
     } 
+    
+    function currentResult(uint _candidateID) public {
+        //emit candidate's data
+        emit candidateData(_candidateID,candidates[_candidateID].voteReceived);
+    }
     
     function startElection() public {
         //start the election
