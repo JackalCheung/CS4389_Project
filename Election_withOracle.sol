@@ -17,9 +17,9 @@ contract Election { //the whole election process is controlled by admin
     
     uint public candidatesCount; //number of candidates in the election
     
-    event periodControl(address,bool); //control the election period
-    event voteValidation(address,bool,string); //tell if the vote is valid
-    event electionWinner(address,uint,uint); //emit winners' info
+    event periodControl(address me,bool status); //control the election period
+    event voteValidation(address me,bool validity, string _candidateName); //tell if the vote is valid
+    event electionWinner(address me,uint winnerID, uint voteReceived); //emit winners' info
     
     function addCandidate() public { //candidate is added by admin
         candidatesCount++;
