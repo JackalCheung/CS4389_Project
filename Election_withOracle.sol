@@ -20,7 +20,6 @@ contract Election { //the whole election process is controlled by admin
     event periodControl(address me,bool status); //control the election period
     event voteValidation(address me,bool validity, string _candidateName); //tell if the vote is valid
     event electionWinner(address me,uint winnerID, uint voteReceived); //emit winners' info
-    event candidateData(uint candidateID, uint voteReceived); //emit candidate's data
     
     function addCandidate() public { //candidate is added by admin
         candidatesCount++;
@@ -63,9 +62,9 @@ contract Election { //the whole election process is controlled by admin
         }
     } 
     
-    function currentResult(uint _candidateID) public {
+    function currentResult(uint _candidateID) public view returns (uint,uint){
         //emit candidate's data
-        emit candidateData(_candidateID,candidates[_candidateID].voteReceived);
+        return (_candidateID,candidates[_candidateID].voteReceived);
     }
     
     function startElection() public {
