@@ -11,7 +11,6 @@ contract Login {
     
     mapping(address=>userInfo) userList;
     
-    event userRegister(address,string);
     event returnInfo(address,uint,string,string);
     event userRole(string);
     
@@ -25,7 +24,7 @@ contract Login {
                 ,u.userID
                 ,u.SID
                 ,u.userRole);
-                break;
+                return;
             }
         }
         
@@ -33,7 +32,10 @@ contract Login {
             u = userInfo(i, _SID, _role);
             users.push(_user);
             userList[_user] = u;
-            emit userRegister(address(this), _SID);
+            emit returnInfo(address(this)
+                ,u.userID
+                ,u.SID
+                ,u.userRole);
         }
     }
     
