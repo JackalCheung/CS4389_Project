@@ -15,7 +15,7 @@ contract Login {
     event returnInfo(address,uint,string,string);
     event userRole(string);
     
-    function login(address _user, string memory _name, string memory _role) public {
+    function login(address _user, string memory _SID, string memory _role) public {
         uint i;
         userInfo memory u;
         for(i=0;i<users.length;i++) {
@@ -30,10 +30,10 @@ contract Login {
         }
         
         if(i == users.length) {
-            u = userInfo(i, _name, _role);
+            u = userInfo(i, _SID, _role);
             users.push(_user);
             userList[_user] = u;
-            emit userRegister(address(this), _name);
+            emit userRegister(address(this), _SID);
         }
     }
     
