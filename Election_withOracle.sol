@@ -8,7 +8,6 @@ contract Election { //the whole election process is controlled by admin
     
     struct Candidate {
         uint candidateID;
-        string candidateName;
         uint voteReceived;
     }
     
@@ -18,13 +17,13 @@ contract Election { //the whole election process is controlled by admin
     
     uint public candidatesCount; //number of candidates in the election
     
-    event periodControl(bool); //control the election period
-    event voteValidation(bool); //tell if the vote is valid
-    event electionWinner(uint,string,uint); //emit winners' info
+    event periodControl(address,bool); //control the election period
+    event voteValidation(address,bool,string); //tell if the vote is valid
+    event electionWinner(address,uint,uint); //emit winners' info
     
-    function addCandidate(string memory _name) public { //candidate is added by admin
+    function addCandidate() public { //candidate is added by admin
         candidatesCount++;
-        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
+        candidates[candidatesCount] = Candidate(candidatesCount, 0);
     }
     
     function vote(uint _candidateID) public {
@@ -36,20 +35,10 @@ contract Election { //the whole election process is controlled by admin
         //update candidate vote recevied
         candidates[_candidateID].voteReceived++;
         //tell the console it is a valid vote
-        ElectionOracle(oracle_address).voteReceivedValidation(address(this),true);
+        ElectionOracle(oracle_address).voteReceivedValidation(address(msg.sender),true,_candidateID);
         }
         //tell the console it is a invalid vote
-        ElectionOracle(oracle_address).voteReceivedValidation(address(this),false);
-    }
-    
-    function startElection() public {
-        //start the election
-        ElectionOracle(oracle_address).electionPeriodControl(address(this),true);
-    }
-    
-    function endElection() public {
-        //end the election
-        ElectionOracle(oracle_address).electionPeriodControl(address(this),false);
+        ElectionOracle(oracle_address).voteReceivedValidation(address(msg.sender),false,_candidateID);
     }
     
     function result() public {
@@ -69,10 +58,19 @@ contract Election { //the whole election process is controlled by admin
         for(uint i=0;i<winnerList.length;i++) {
             ElectionOracle(oracle_address).getWinnerData(address(this)
             ,winnerList[i].candidateID
-            ,winnerList[i].candidateName
             ,winnerList[i].voteReceived);
         }
     } 
+    
+    function startElection() public {
+        //start the election
+        emit periodControl(address(this),true); 
+    }
+    
+    function endElection() public {
+        //end the election
+        emit periodControl(address(this),false); 
+    }
     
     function setOracle(address o) public {
         oracle_address = o;
@@ -80,5 +78,17 @@ contract Election { //the whole election process is controlled by admin
     
     function getOracle() public view returns (address) {
         return oracle_address;
+    }
+    
+    function callbackWinnerRecord() public {
+        for(uint i=0;i<winnerList.length;i++) {
+        emit electionWinner(address(this)
+            ,winnerList[i].candidateID
+            ,winnerList[i].voteReceived);
+        }
+    }
+    
+    function callbackVoteRecord(bool validity, string memory _candidateName) public {
+        emit voteValidation(address(msg.sender),validity,_candidateName);
     }
 }
