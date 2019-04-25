@@ -24,7 +24,7 @@ contract Login {
                 ,u.userID
                 ,u.SID
                 ,u.userRole);
-                return;
+                break;
             }
         }
         
