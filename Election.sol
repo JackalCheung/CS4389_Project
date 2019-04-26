@@ -63,30 +63,27 @@ contract Election { //the whole election process is controlled by admin
     } 
     
     function currentResult(uint _candidateID) public view returns (uint,uint){
-        //emit candidate's data
-        return (_candidateID,candidates[_candidateID].voteReceived);
+        return (_candidateID,candidates[_candidateID].voteReceived); //emit candidate's data
     }
     
     function startElection() public {
-        //start the election
-        emit periodControl(address(this),true); 
+        emit periodControl(address(this),true); //start the election
+    } 
+    
+    function endElection() public { 
+        emit periodControl(address(this),false); //end the election
     }
     
-    function endElection() public {
-        //end the election
-        emit periodControl(address(this),false); 
-    }
-    
-    function setOracle(address o) public {
-        oracle_address = o;
+    function setOracle(address o) public { 
+        oracle_address = o; //set oracle address
     }
     
     function getOracle() public view returns (address) {
-        return oracle_address;
+        return oracle_address; //return oracle address
     }
     
     function callbackWinnerRecord() public {
-        for(uint i=0;i<winnerList.length;i++) {
+        for(uint i=0;i<winnerList.length;i++) { //callback function for electionWinner
         emit electionWinner(address(this)
             ,winnerList[i].candidateID
             ,winnerList[i].voteReceived);
@@ -94,6 +91,6 @@ contract Election { //the whole election process is controlled by admin
     }
     
     function callbackVoteRecord(string memory _candidateName) public {
-        emit voteValidation(address(msg.sender),true,_candidateName);
+        emit voteValidation(address(msg.sender),true,_candidateName); //callback function for voteValidation
     }
 }
