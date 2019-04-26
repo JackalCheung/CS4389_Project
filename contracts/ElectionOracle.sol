@@ -17,4 +17,6 @@ contract ElectionOracle {
     function voteReceivedValidation(address client_address, bool validity, uint _candidateID) external {
         emit voteValidation(client_address, validity, _candidateID);
     }
+    
+    
 }

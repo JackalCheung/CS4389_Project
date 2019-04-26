@@ -1,0 +1,22 @@
+{
+    "abi": [
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "name": "validity",
+                    "type": "bool"
+                },
+                {
+                    "name": "_candidateName",
+                    "type": "string"
+                }
+            ],
+            "name": "callbackVoteRecord",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ]
+}

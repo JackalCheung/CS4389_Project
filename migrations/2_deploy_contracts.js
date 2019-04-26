@@ -1,11 +1,8 @@
-var SimpleStorage = artifacts.require("./SimpleStorage.sol");
-var Election = artifacts.require("./Election.sol");
-var ElectionOracle = artifacts.require("./ElectionOracle.sol");
-var Login = artifacts.require("./Login.sol");
+var Election = artifacts.require("../contracts/Election.sol");
+var ElectionOracle = artifacts.require("../contracts/ElectionOracle.sol");
 
 module.exports = function(deployer) {
     var o;
-    // deployer.deploy(Login);
     deployer.deploy(ElectionOracle);
     deployer.deploy(Election);
     deployer.then(function() {
