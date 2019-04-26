@@ -1,0 +1,34 @@
+ instance.methods.candidatesCount().call().then(function(res){
+    console.log(res);
+    if (res){
+        for (var i = 1; i <= res ; i++) {
+            instance.methods.candidates(i).call().then(function(candidate) {
+                var id = candidate[0];
+                var voteCount = candidate[1];
+                let tempObject = { id , voteCount };
+                // Render candidate Result
+                // var candidateTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
+                Self.setState(prevState => ({
+                    candidates: [...prevState.candidates, tempObject]
+                }));
+            });
+        }
+    } 
+});
+
+<table>
+    <tbody>
+    <tr>
+        <th> Candidate ID</th>
+        <th> Candidate Name</th>
+        <th> Votes </th>
+    </tr>
+    {this.state.candidates && this.state.candidates.map((info, i) => 
+        <tr>
+            <td> { i + 1 } </td>
+            <td> { candidates[info.id] } </td>
+            <td> { info.voteCount } </td>
+        </tr>
+    )} 
+    </tbody>
+</table>
